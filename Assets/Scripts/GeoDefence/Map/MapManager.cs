@@ -94,6 +94,11 @@ namespace GeoDefence.Map
             return tileMap.CellToWorld(_cellPosition);
         }
 
+        public Vector3 GetPathWorldPosition(int _index)
+        {
+            return CellToWorld(PathData.CellPositions[_index]);
+        }
+
         private void Update()
         {
             if (Input.GetMouseButtonDown(0))
