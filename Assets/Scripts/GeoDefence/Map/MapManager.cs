@@ -20,7 +20,7 @@ namespace GeoDefence.Map
         /// </summary>
         private Dictionary<Vector3Int, TileProperties> tilePropertyMap;
 
-        private void Start()
+        private void Awake()
         {
             GeneratePropertyMap();
         }
@@ -97,6 +97,11 @@ namespace GeoDefence.Map
         public Vector3 GetPathWorldPosition(int _index)
         {
             return CellToWorld(PathData.CellPositions[_index]);
+        }
+
+        public List<Vector3> GetBuildablePositions()
+        {
+            return (from pair in tilePropertyMap where pair.Value.Type == TileType.Buildable select CellToWorld(pair.Key) + Vector3.one * 0.5f).ToList();
         }
 
         private void Update()

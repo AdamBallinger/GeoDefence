@@ -9,6 +9,8 @@ namespace GeoDefence.Unit
         [SerializeField] [Tooltip("Attacks per second")] private float baseAttackSpeed;
         [SerializeField] private float baseDamage;
 
+        [SerializeField] private Sprite turretSprite;
+
         /// <summary>
         /// Name of the unit.
         /// </summary>
@@ -23,5 +25,10 @@ namespace GeoDefence.Unit
         /// Base damage per attack of unit.
         /// </summary>
         public float BaseDamage => baseDamage;
+
+        /// <summary>
+        /// Sprite used to represent the "shooting" part of the unit.
+        /// </summary>
+        public Sprite TurretSprite => turretSprite;
     }
 }
